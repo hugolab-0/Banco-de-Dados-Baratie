@@ -25,7 +25,8 @@ create table tbl_refeicao(
     nome varchar(100) not null,
     descricao       text,
     modo_preparo    text,
-    apoio_decisao   text
+    apoio_decisao   text,
+    img varchar(255) not null
 );
 
 -- Cria a tabela de refeicao relacionada com alimento
@@ -41,14 +42,6 @@ create table tbl_adm(
     email varchar(255) not null,
     senha varchar(255) not null,
     ultimo_acesso datetime
-);
-
--- Cria a tabela de recuperacao de senha
-create table tbl_recuperacao_senha(
-    id int not null primary key auto_increment,
-    token varchar(255),
-    expira_em datetime,
-    usado tinyint(1)
 );
 
 #########   TABELAS DE DADOS ESTATICOS   #########
