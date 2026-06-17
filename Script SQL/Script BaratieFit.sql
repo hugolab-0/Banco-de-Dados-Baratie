@@ -170,6 +170,50 @@ insert into tbl_nivel_acesso(nivel)
 values
 ("Root"), ("Administrador"), ("Nutricionista"), ("Editor");
 
+#########   INSERÇÃO DE DADOS   #########
+
+-- Insercao de dados na tabela de adm
+insert into tbl_adm(nome, email, senha, ultimo_acesso, id_nivel_acesso)
+values(	"admin",
+		"admin@gmail.com",
+        "admin",
+        "2026-06-17",
+        1
+        );
+
+-- Inserção de dados na tabela de alimentos        
+insert into tbl_alimento(nome, descricao, proteinas_g, carboidratos_g, lipidios_g, fibras_g, acucar_adicionado_g, gorduras_trans_g, gorduras_saturadas_g, id_categoria, id_adm, id_enquadramento)
+values(	"Peito de frango cozido sem pele",
+		"Porção de 100 gramas de peito de frango cozido sem pele com temperos secos",
+		32,
+        1,
+		3,
+        0,
+        0,
+        0,
+        1,
+        3,
+        1,
+        10
+        );
+-- Inserção de dados na tabela de refeições
+insert into tbl_refeicao(nome, descricao, modo_preparo, apoio_decisao, img, id_tipo_refeicao, id_publico_alvo, id_adm)
+values(	"A moda do Sanji",
+		"A moda do Sanji é uma refeição pensada em agilidade em dias corridos para gerar saciedade com alimentos nutritivos",
+		"Cozinhe o peito de frango por volta de 25 minutos em uma panela de pressão em fogo médio, logo após desfie-o e adicione temperos secos a gosto, dentre os quais chimichurri defumado, tempero baiano e páprica defumada",
+        "Uma ótima opção de alimento para gerar saciedade, com um alto teor de proteína e um baixo teor de gordura",
+        "https://swiftbr.vteximg.com.br/arquivos/ids/210980/621236-peito-de-frango-temperado-desfiado_rec.jpg?v=638943223429630000",
+        2,
+        2,
+        1
+        );
+        
+-- Inserção de dados na tabela de refeição_alimento
+insert into tbl_refeicao_alimento(id_refeicao, id_alimento, quantidade_g)
+values(	1,
+		1,
+        100
+        );
 #########   ALTER TABLES   #########   
 -- Adiciona a FK na tabela de alimento e cria as relacoes
 alter table tbl_alimento
