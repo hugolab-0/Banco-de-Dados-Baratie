@@ -16,7 +16,8 @@ create table tbl_alimento(
     fibras_g                decimal(8,2) not null,
     acucar_adicionado_g     decimal(8,2) not null,
     gorduras_trans_g        decimal(8,2) not null,
-    gorduras_saturadas_g    decimal(8,2) not null
+    gorduras_saturadas_g    decimal(8,2) not null,
+    unidade_medida			varchar(20) not null
 );
 
 -- Cria a tabela de refeicao
@@ -32,7 +33,8 @@ create table tbl_refeicao(
 -- Cria a tabela de refeicao relacionada com alimento
 create table tbl_refeicao_alimento(
     id int not null primary key auto_increment,
-    quantidade_g decimal(8,2)
+    quantidade_g decimal(8,2),
+    unidade_medida varchar(20) not null
 );
 
 -- Cria a tabela de adm
@@ -182,7 +184,7 @@ values(	"admin",
         );
 
 -- Inserção de dados na tabela de alimentos        
-insert into tbl_alimento(nome, descricao, proteinas_g, carboidratos_g, lipidios_g, fibras_g, acucar_adicionado_g, gorduras_trans_g, gorduras_saturadas_g, id_categoria, id_adm, id_enquadramento)
+insert into tbl_alimento(nome, descricao, proteinas_g, carboidratos_g, lipidios_g, fibras_g, acucar_adicionado_g, gorduras_trans_g, gorduras_saturadas_g, id_categoria, id_adm, id_enquadramento, unidade_medida)
 values(	"Peito de frango cozido sem pele",
 		"Porção de 100 gramas de peito de frango cozido sem pele com temperos secos",
 		32,
@@ -193,8 +195,9 @@ values(	"Peito de frango cozido sem pele",
         0,
         1,
         3,
-        1,
-        10
+        2,
+        10,
+        "gramas"
         );
 -- Inserção de dados na tabela de refeições
 insert into tbl_refeicao(nome, descricao, modo_preparo, apoio_decisao, img, id_tipo_refeicao, id_publico_alvo, id_adm)
