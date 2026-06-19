@@ -37,6 +37,8 @@ create table tbl_refeicao_alimento(
     unidade_medida varchar(20) not null
 );
 
+select * from tbl_alimento;
+
 -- Cria a tabela de adm
 create table tbl_adm(
     id int not null primary key auto_increment,
@@ -182,6 +184,8 @@ values(	"admin",
         "2026-06-17",
         1
         );
+        
+        select * from tbl_refeicao;
 
 -- Inserção de dados na tabela de alimentos        
 insert into tbl_alimento(nome, descricao, proteinas_g, carboidratos_g, lipidios_g, fibras_g, acucar_adicionado_g, gorduras_trans_g, gorduras_saturadas_g, id_categoria, id_adm, id_enquadramento, unidade_medida)
@@ -208,7 +212,7 @@ values(	"A moda do Sanji",
         "https://swiftbr.vteximg.com.br/arquivos/ids/210980/621236-peito-de-frango-temperado-desfiado_rec.jpg?v=638943223429630000",
         2,
         2,
-        1
+        2
         );
         
 -- Inserção de dados na tabela de refeição_alimento
